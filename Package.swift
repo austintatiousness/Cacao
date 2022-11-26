@@ -9,15 +9,15 @@ let package = Package(
         ],
     dependencies: [
         .package(
-            url: "https://github.com/PureSwift/Silica.git",
+            url: "https://github.com/austintatiousness/Silica.git",
             .branch("master")
         ),
         .package(
-            url: "https://github.com/PureSwift/Cairo.git",
+            url: "https://github.com/austintatiousness/Cairo.git",
             .branch("master")
         ),
         .package(
-            url: "https://github.com/PureSwift/SDL.git",
+            url: "https://github.com/austintatiousness/SDL.git",
             .branch("master")
         )
     ],
