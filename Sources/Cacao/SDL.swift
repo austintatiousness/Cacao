@@ -84,7 +84,7 @@ internal func SDLEventRun() {
         
         // run loop
         let runLoopStartTime = SDL_GetTicks()
-        runloop.run(mode: .defaultRunLoopMode, before: Date() + (1.0 / TimeInterval(framesPerSecond)))
+        runloop.run(mode: .default, before: Date() + (1.0 / TimeInterval(framesPerSecond)))
         //_UIApp.eventDispatcher.handleHIDEventFetcherDrain()
         if eventCount > 0 { print("Runloop took (\(SDL_GetTicks() - runLoopStartTime)ms)") }
         
