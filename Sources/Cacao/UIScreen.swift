@@ -65,7 +65,7 @@ public final class UIScreen {
         
         // update values
         self.updateSize()
-        try self.renderer.setDrawColor((0x00, 0x00, 0x00, 0xFF))
+        try self.renderer.setDrawColor(red: 0, green: 0, blue: 0, alpha: 1)
     }
     
     // MARK: - Methods
