@@ -235,7 +235,7 @@ open class UIResponder: NSObject {
     /// When you request an undo manager, the request goes up the responder chain and the `UIWindow`
     /// object returns a usable instance.
     /// You may add undo managers to your view controllers to perform undo and redo operations local to the managed view.
-    open var undoManager: UndoManager? { return nil }
+    //open var undoManager: UndoManager? { return nil }
     
     // MARK: - Validating Commands
     
