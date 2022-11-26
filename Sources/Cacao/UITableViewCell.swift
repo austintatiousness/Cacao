@@ -222,7 +222,7 @@ open class UITableViewCell: UIView {
     
     internal weak var tableView: UITableView?
     
-    @_versioned
+    @usableFromInline
     internal let style: UITableViewCellStyle
     
     // added as subview in `init()`
@@ -656,4 +656,3 @@ internal protocol ReusableView {
 }
 
 extension UITableViewCell: ReusableView { }
-
