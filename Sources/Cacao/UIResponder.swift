@@ -105,22 +105,18 @@ open class UIResponder: NSObject {
     /// The default implementation of this method forwards the message up the responder chain.
     /// When creating your own subclasses, call super to forward any events that you do not handle yourself.
     open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         next?.touchesBegan(touches, with: event)
     }
     
     open func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         next?.touchesMoved(touches, with: event)
     }
     
     open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         next?.touchesEnded(touches, with: event)
     }
     
     open func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
         next?.touchesCancelled(touches, with: event)
     }
     
@@ -135,13 +131,11 @@ open class UIResponder: NSObject {
     /// The default implementation of this method forwards the message up the responder chain.
     open func motionBegan(_ motion: UIEventSubtype,
                           with event: UIEvent?) {
-        
         next?.motionBegan(motion, with: event)
     }
     
     /// Tells the receiver that a motion event has ended.
     open func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
-        
         next?.motionEnded(motion, with: event)
     }
     
@@ -167,25 +161,21 @@ open class UIResponder: NSObject {
     /// The default implementation of this method forwards the message up the responder chain.
     /// When creating your own subclasses, call super to forward any events that you do not handle yourself.
     open func pressesBegan(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
-        
         next?.pressesBegan(presses, with: event)
     }
     
     /// Tells this object when a value associated with a press has changed.
     open func pressesChanged(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
-        
         next?.pressesChanged(presses, with: event)
     }
     
     /// Tells the object when a button is released.
     open func pressesEnded(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
-        
         next?.pressesEnded(presses, with: event)
     }
     
     /// Tells this object when a system event (such as a low-memory warning) cancels a press event.
     open func pressesCancelled(_ presses: Set<UIPress>, with event: UIPressesEvent?) {
-        
         next?.pressesCancelled(presses, with: event)
     }
     
