@@ -192,17 +192,12 @@ open class UIWindow: UIView {
     }
     
     private func sendButtons(for event: UIPressesEvent) {
-        
-        let responders = event.responders(for: self)
-        
-        for responder in responders {
-            
-            
-        }
+         if let responder = self.firstResponder {
+                responder.pressesBegan([], with: event)
+         }
     }
     
     internal override var responderWindow: UIWindow? {
-        
         return self
     }
 }
