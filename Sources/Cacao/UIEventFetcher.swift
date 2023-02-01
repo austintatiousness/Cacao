@@ -29,7 +29,8 @@ internal final class UIEventFetcher {
     // MARK: - Initialization
     
     init(eventFetcherSink: UIEventFetcherSink) {
-        
+	SDL_StartTextInput()
+	print("SDL_StartTextInput()")
         self.eventFetcherSink = eventFetcherSink
         self.displayLink = CADisplayLink { [weak self] in self?.displayLinkDidFire($0) }
     }
@@ -141,7 +142,7 @@ internal final class UIEventFetcher {
         // log signaling reason
         if incomingHIDEvents.isEmpty == false {
             
-            print("\(incomingHIDEvents.count) events availible with reason \(reason)")
+          //  print("\(incomingHIDEvents.count) events availible with reason \(reason)")
         }
         
         // signal
