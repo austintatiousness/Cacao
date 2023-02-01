@@ -46,7 +46,7 @@ internal final class UIEventEnvironment {
         
         if let hidEvent = eventQueue.first {
             #if DEBUG
-            print("Processed \(eventQueue.count) events (\(SDL_GetTicks() - UInt32(hidEvent.timestamp))ms)")
+            //print("Processed \(eventQueue.count) events (\(SDL_GetTicks() - UInt32(hidEvent.timestamp))ms)")
             #endif
         }
         
@@ -58,7 +58,7 @@ internal final class UIEventEnvironment {
         
         let timestamp = Double(hidEvent.timestamp) / 1000
         #if DEBUG
-        print("hidEventData \(hidEvent.data)")
+        //print("hidEventData \(hidEvent.data)")
         #endif
         switch hidEvent.data {
             
@@ -269,13 +269,15 @@ internal final class UIEventEnvironment {
             
             return event
         case let .mouseWheel(translation):
-            print(".mouseWheel(translation)")
             let event = UIWheelEvent(timestamp: timestamp, translation: translation)
             
             return event
             
+        case let .composingKey(string, finished):  
+            let event = UIPressesEvent(timestamp: timestamp)
+            event.characters = string
+            return event
         default:
-            print("return nil becuase who tf knows")
             return nil
         }
     }
