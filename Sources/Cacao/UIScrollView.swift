@@ -172,7 +172,7 @@ open class UIScrollView: UIView {
     /// If the value is false, scrolling stops immediately at the content boundary without bouncing.
     ///
     /// The default value is true.
-    public var bounces: Bool = true
+    public var bounces: Bool = false
     
     /// A Boolean value that determines whether bouncing always occurs when vertical scrolling reaches the end of the content.
     public var isAlwaysBounceVertical: Bool = false
@@ -324,7 +324,7 @@ open class UIScrollView: UIView {
     #endif
     
     private func panGesture(_ gesture: UIGestureRecognizer) {
-        
+
         guard gesture === panGestureRecognizer
             else { assertionFailure(); return }
         
@@ -368,12 +368,11 @@ open class UIScrollView: UIView {
     }
     
     private func drag(with translation: CGPoint) {
-        
         guard isDragging
             else { return }
         
         // Update scrollers
-        //horizontalScroller?.alwaysVisible = true
+        //horizontalScroller?.alwaysVisible = truefunc 
         //verticalScroller?.alwaysVisible = true
         
         let delta: CGPoint
@@ -442,8 +441,11 @@ open class UIScrollView: UIView {
     
     private func updateBounds() {
         
-        self.bounds.origin = CGPoint(x: contentOffset.x - contentInset.left,
-                                     y: contentOffset.y - contentInset.top)
+       // self.bounds.origin = CGPoint(x: contentOffset.x - contentInset.left,
+       //                             y: contentOffset.y - contentInset.top)
+                                     
+        self.bounds.origin = CGPoint(x: -contentOffset.x,
+                                     y: -contentOffset.y)
         updateScrollers()
         setNeedsDisplay()
     }
