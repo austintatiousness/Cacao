@@ -31,6 +31,10 @@ final class ScrollViewController: UIViewController, UIScrollViewDelegate {
     
     private(set) var contentView: UIView!
     
+    private(set) var textField: UITextField!
+    
+    private(set) var uiSwitch: UISwitch!
+    
     // MARK: - Loading
     
     override func loadView() {
@@ -38,7 +42,9 @@ final class ScrollViewController: UIViewController, UIScrollViewDelegate {
         view = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 400))
         view.backgroundColor = .white
         
-        scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: 320, height: 400))
+        
+        
+        scrollView = UIScrollView(frame: CGRect(x: 0, y: 50, width: 320, height: 350))
         scrollView.delegate = self
         view.addSubview(scrollView)
         
@@ -57,6 +63,13 @@ final class ScrollViewController: UIViewController, UIScrollViewDelegate {
         logoView.pointSize = 100
         logoView.contentMode = .scaleAspectFill
         scrollView.addSubview(logoView)
+        
+        textField = UITextField(frame: CGRect(x: 0, y: 0, width: 100, height: 22))
+        view.addSubview(textField)
+        
+        uiSwitch = UISwitch(frame: CGRect(x: 0, y: 200, width: 100, height: 22))
+        view.addSubview(uiSwitch)
+        
     }
     
     override func viewWillLayoutSubviews() {
@@ -80,14 +93,10 @@ final class ScrollViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        print("Did scroll \(scrollView.contentOffset)")
-        assert(scrollView.contentOffset == scrollView.bounds.origin)
+
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        
-        print("Will begin dragging")
+
     }
 }
-
