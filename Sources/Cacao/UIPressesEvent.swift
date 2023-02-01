@@ -10,6 +10,8 @@ import Foundation
 /// An event that describes the state of a set of physical buttons that are available to the device,
 /// such as those on an associated remote or game controller.
 public class UIPressesEvent: UIEvent {
+
+    public var characters: String = ""
     
     /// Returns the state of all physical buttons in the event.
     public internal(set) var allPresses: Set<UIPress> = []
