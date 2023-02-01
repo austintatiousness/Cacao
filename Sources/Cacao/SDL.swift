@@ -79,14 +79,14 @@ internal func SDLEventRun() {
         
         if eventCount > 0 {
             
-            print("Polled \(eventCount) events (\(SDL_GetTicks() - startTime)ms)")
+            //print("Polled \(eventCount) events (\(SDL_GetTicks() - startTime)ms)")
         }
         
         // run loop
         let runLoopStartTime = SDL_GetTicks()
         runloop.run(mode: .default, before: Date() + (1.0 / TimeInterval(framesPerSecond)))
         //_UIApp.eventDispatcher.handleHIDEventFetcherDrain()
-        if eventCount > 0 { print("Runloop took (\(SDL_GetTicks() - runLoopStartTime)ms)") }
+       // if eventCount > 0 { print("Runloop took (\(SDL_GetTicks() - runLoopStartTime)ms)") }
         
         // render to screen
         do { try screen.update() }
