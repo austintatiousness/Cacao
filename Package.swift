@@ -1,4 +1,4 @@
-// swift-tools-version:5.6
+// swift-tools-version: 5.6
 import PackageDescription
 
 let package = Package(
@@ -30,7 +30,7 @@ let package = Package(
                 "SDL"
             ]
         ),
-        .target(
+        .executableTarget(
             name: "CacaoDemo",
             dependencies: [
                 "Cacao"
